@@ -1,0 +1,22 @@
+{
+    "name": "llvdl/slim-translation-example",
+    "description": "Example of a Slim 3 website using translations",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.6",
+        "slim/twig-view": "^2.1",
+        "illuminate/translation": "^5.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lennaert van der Linden",
+            "email": "lennaertvanderlinden@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Llvdl\\App\\": "app/"
+        }
+    }
+}
