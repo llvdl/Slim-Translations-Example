@@ -1,0 +1,6 @@
+<nav class="locale">
+  {% set locales = {'en': 'English', 'nl': 'Nederlands' } %}
+  {% for locale, label in locales %}
+      <a href="{{ path_for(currentRoute, currentRouteParams|merge({'locale': locale})) }}" class="{{ locale == app.locale ? 'active' : '' }}">{{ label }}</a>
+  {% endfor %}
+</nav>

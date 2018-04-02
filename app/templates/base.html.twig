@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ app.locale }}">
+    <head>
+        <title>{{ trans('messages.title')}}</title>
+        <link rel="stylesheet" href="/assets/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Chicle|Titillium+Web" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                {% include '_locale.html.twig' %}
+
+                <h1><a href="/">Slim Translation Example</a></h1>
+
+                <nav class="breadcrumb">
+                    {% block breadcrumb %}{% endblock %}
+                </nav>
+            </header>
+
+            <div class="content">
+                <h2>{%block title %}{% endblock %}</h2>
+
+                {% block page_content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
