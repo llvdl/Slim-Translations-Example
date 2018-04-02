@@ -1,0 +1,180 @@
+html {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  background-color: #eee;
+  color: #433;
+  font-size: 1.6rem;
+}
+
+button {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.container {
+  position: relative;
+  max-width: 960px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.container > header {
+  background-color: #433;
+  padding: 1rem;
+}
+
+hr {
+  margin: 2rem 0 2rem 0;
+  border: 0;
+  height: 4px;
+  width: 100%;
+  background-image: url('/assets/hr.svg');
+  background-size: 1rem;
+}
+
+nav.locale {
+  position: absolute;
+  right: 2rem;
+  top: 0;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 1em;
+  color: white;
+  padding: .5rem;
+}
+nav.locale a {
+  color: white;
+}
+nav.locale .active {
+  font-weight: bold;
+  background-color: white;
+  color: #433;
+  padding: .5rem;
+  text-decoration: none;
+}
+
+nav.breadcrumb {
+  display: inline-block;
+  color: white;
+}
+
+nav.breadcrumb a {
+  color: white;
+}
+
+nav.breadcrumb ul {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+nav.breadcrumb li {
+  display: inline;
+  font-size: 90%;
+}
+
+nav.breadcrumb li:after {
+  content: ' > ';
+}
+
+nav.breadcrumb li:last-child:after {
+  content: '';
+}
+
+.container h1 {
+  color: white;
+  font-family: 'Chicle', cursive;
+  font-size: 400%;
+  text-align: center;
+}
+
+.container h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.container .content {
+  padding: 1rem;
+}
+
+.card {
+  width: calc(50% - 4px);
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1rem;
+  vertical-align: top;
+}
+
+.card img {
+  display: block;
+  margin: 0 auto;
+  height: 6rem;
+}
+
+.card .card-body {
+  border: 4px solid #99CCEE;
+  padding: 1rem;
+  margin-top: -2rem;
+  padding-top: 3rem;
+}
+
+.card .card-body a {
+  color: #114455;
+}
+
+
+.row {
+  position: relative;
+  font-size: 0;
+}
+
+.col-full, .col-half, .col-third {
+  font-size: 1.6rem;
+  display: inline-block;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-third {
+  width: 33.33%;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  padding: .5rem !important;
+  font-size: 1.6rem;
+  background-color: #99CCEE;
+  color: #443333;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 4px 4px 2px;
+  box-sizing: border-box;
+}
+
+.btn:active {
+  box-shadow: none;
+  box-shadow: 1px 1px 1px;
+  transform: translate(4px,4px);
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

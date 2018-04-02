@@ -1,13 +1,14 @@
 <?php
 
-namespace Llvdl\App\Twig;
+namespace App\Twig;
 
 use Illuminate\Translation\Translator;
 
 /**
- * Registers the Illuminate Translator as a the trans and transChoice functions in Twig
+ * Registers the Illuminate Translator as a the trans and transChoice functions in Twig.
+ * The variable app.locale is registered as a global twig variables.
  */
-class TranslatorExtension extends \Twig_Extension
+class TranslatorExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
     /**
      * @var Translator
@@ -29,6 +30,13 @@ class TranslatorExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction('trans', array($this->translator, 'trans')),
             new \Twig_SimpleFunction('transChoice', array($this->translator, 'transChoice')),
+        ];
+    }
+
+    public function getGlobals()
+    {
+        return [
+            'app' => ['locale' => $this->translator->getLocale()]
         ];
     }
 }

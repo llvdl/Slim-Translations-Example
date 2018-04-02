@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% set currentRoute = 'update_name' %}
+{% set currentRouteParams = [] %}
+
+{% block title %}
+    {{ trans('messages.label.update_name') }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <ul>
+        <li><a href="{{ path_for('home', {'locale': app.locale}) }}">{{ trans('messages.page.home') }}</a></li>
+        <li>{{ trans('messages.page.update_name') }}</a></li>
+    </ul>
+{% endblock %}
+
+{% block page_content %}
+    {% if errors is not empty %}
+        <p>{{ trans('messages.form.error_header') }}</p>
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST">
+        <p>
+            <label for="input_name">{{ trans('messages.label.name') }}</label>
+            <input name="name" value="{{ name }}" id="input_name"/>
+        </p>
+        <p>
+            <button class="btn" type="submit">{{ trans('messages.label.update_name') }}</button>
+        </p>
+    </form>
+{% endblock %}

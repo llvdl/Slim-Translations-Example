@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% set currentRoute = 'home' %}
+{% set currentRouteParams = [] %}
+
+{% block title %}
+    {{ trans('messages.greet', {'name': name}) }}
+{% endblock %}
+
+{% block breadcrumb %}
+    <ul>
+        <li>{{ trans('messages.page.home') }}</li>
+    </ul>
+{% endblock %}
+
+{% block page_content %}
+    <section class="intro">
+        <h3>{{ trans('messages.intro') }}</h3>
+    </section>
+
+    <div class="row">
+      <div class="col-half">
+          {{ transChoice('messages.name_changes', nameChangeCount, {'count': nameChangeCount}) }}
+      </div>
+      <div class="col-half align-center">
+          <a class="btn" href="{{ path_for('update_name', {'locale': app.locale}) }}">{{ trans('messages.label.update_name') }}</a>
+      </p>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-full card">
+            <img src="/assets/strawberry.svg"/>
+            <div class="card-body">
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                </p>
+                <p class="align-right"><a href="#">{{ trans('messages.link.read_more') }}</a></p>
+            </div>
+        </div>
+        <div class="col-third card">
+            <img src="/assets/martini.svg"/>
+            <div class="card-body">
+                <p>
+                    Aenean elementum orci nec risus viverra lacinia. Aenean varius urna et augue consequat, sit amet
+                    bibendum mauris dictum. Mauris fringilla ligula justo, ac dignissim odio scelerisque vel. Duis
+                    pulvinar risus eu volutpat dignissim. Aliquam erat volutpat. Quisque condimentum nulla nisl, ut
+                    lacinia ex interdum eget.
+                </p>
+                <p class="align-right"><a href="#">{{ trans('messages.link.read_more') }}</a></p>
+            </div>
+        </div>
+        <div class="col-third card">
+            <img src="/assets/ice-cream.svg"/>
+            <div class="card-body">
+                <p>
+                    Curabitur posuere euismod ullamcorper. Mauris hendrerit leo nec ligula fermentum accumsan nec vitae
+                    urna. Mauris molestie turpis in pharetra faucibus. Aliquam pretium congue finibus.
+                </p>
+                <p class="align-right"><a href="#">{{ trans('messages.link.read_more') }}</a></p>
+            </div>
+        </div>
+        <div class="col-third card">
+            <img src="/assets/cupcake.svg"/>
+            <div class="card-body">
+                <p>
+                    Mauris eu pellentesque sapien. Phasellus diam enim, tincidunt vel neque sit amet, viverra congue
+                    turpis. Suspendisse non arcu tincidunt velit fringilla cursus id sed libero. Pellentesque et orci ac
+                    eros efficitur iaculis. Nulla lacus neque, eleifend ac posuere euismod, interdum sed tortor.
+                </p>
+                <p class="align-right"><a href="#">{{ trans('messages.link.read_more') }}</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
