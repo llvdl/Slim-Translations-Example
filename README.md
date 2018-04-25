@@ -36,3 +36,8 @@ Start the PHP built-in web server from the terminal:
     php -S localhost:8000 -t web
 
 If the server has succesfully started, open the following url in your browser: http://localhost:8000
+
+Running using Apache, Nginx or other web servers
+---
+
+Please see the Slim documentation on adding the correct configuration file for running this application using a web server other than the PHP built-in web server: https://www.slimframework.com/docs/v3/start/web-servers.html 
