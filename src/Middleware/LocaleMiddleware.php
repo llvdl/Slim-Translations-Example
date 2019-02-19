@@ -5,12 +5,12 @@ namespace App\Middleware;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Psr\Http\Message\UriInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Illuminate\Contracts\Translation\Translator;
 
 class LocaleMiddleware
 {
     /**
-     * TranslatorInterface
+     * Translator
      */
     private $translator;
 
@@ -25,11 +25,11 @@ class LocaleMiddleware
     private $defaultLocale;
 
     /**
-     * @param TranslatorInterface $translator
+     * @param Translator $translator
      * @param string[] $allowedLocales list of allowed locales that can be set
      * @param string $defaultLocale the default locale if a current locale is not set
      */
-    public function __construct(TranslatorInterface $translator, array $allowedLocales, string $defaultLocale)
+    public function __construct(Translator $translator, array $allowedLocales, string $defaultLocale)
     {
         $this->translator = $translator;
         $this->allowedLocales = $allowedLocales;

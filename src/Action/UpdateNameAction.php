@@ -6,7 +6,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\Twig;
 use Slim\Router;
-use Symfony\Component\Translation\TranslatorInterface;
+use Illuminate\Contracts\Translation\Translator;
 
 /**
  * Shows the home page.
@@ -19,7 +19,7 @@ class UpdateNameAction
     private $view;
 
   /**
-   * @var TranslatorInterface
+   * @var Translator
    */
     private $translator;
 
@@ -28,7 +28,7 @@ class UpdateNameAction
    */
     private $router;
 
-    public function __construct(Twig $view, TranslatorInterface $translator, Router $router)
+    public function __construct(Twig $view, Translator $translator, Router $router)
     {
         $this->view = $view;
         $this->translator = $translator;
